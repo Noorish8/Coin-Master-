@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#192D55">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:max="100"
+        android:visibility="invisible"
+        android:progress="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+    //android:layout_below="@+id/image21"
+
+
+    <RelativeLayout
+        android:id="@+id/rv1"
+        android:layout_width="match_parent"
+        android:layout_height="239dp">
+
+
+        <ImageView
+            android:layout_width="187dp"
+            android:layout_height="183dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/circle" />
+
+
+        <ImageView
+
+            android:layout_width="180dp"
+            android:layout_height="167dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/big" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="127dp"
+            android:layout_height="136dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY" />
+
+
+
+        <!--<ImageView
+            android:id="@+id/coin"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginLeft="@dimen/_90sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            />-->
+
+    </RelativeLayout>
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="127dp"-->
+<!--        android:layout_below="@+id/rv1"-->
+<!--        android:layout_marginTop="@dimen/_14sdp">-->
+<!--        //android:background="@mipmap/shado">-->
+
+<!--    </ImageView>-->
+
+    <RelativeLayout
+        android:layout_width="406dp"
+        android:layout_height="518dp"
+        android:layout_below="@+id/rv1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-26dp">
+
+<!--        <GridLayout-->
+<!--            android:layout_width="304dp"-->
+<!--            android:layout_height="504dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginBottom="14dp"-->
+<!--            android:columnCount="2"-->
+<!--            android:orientation="horizontal">-->
+
+<!--        </GridLayout>-->
+
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_560sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="85dp"
+            android:background="@drawable/ss" />
+
+        <ImageView
+            android:id="@+id/Coin"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_row="0"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="193dp"
+            android:layout_marginRight="193dp"
+            android:layout_marginBottom="155dp" />
+
+        <ImageView
+            android:id="@+id/Guide"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_row="0"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="202dp"
+            android:layout_marginRight="202dp" />
+
+        <ImageView
+            android:id="@+id/Spin"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="39dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="146dp" />
+
+        <ImageView
+            android:id="@+id/CoinandSpin"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp" />
+    </RelativeLayout>
+</RelativeLayout>

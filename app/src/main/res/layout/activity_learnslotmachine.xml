@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Learnslotmachine"
+    android:background="#192D55">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:src="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        tools:layout_editor_absoluteX="-10dp" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_below="@+id/back"
+        android:layout_width="@dimen/_401sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:text="Learn Slot machine Mechanism"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="@dimen/_369sdp"
+        android:layout_height="@dimen/_63sdp"
+        android:layout_below="@+id/text1"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="13dp"
+        android:text="When you match any 3 pattern in the slot machine like shield,hammer ,pigs,coins,to attack other players village"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp" />
+
+
+</RelativeLayout>

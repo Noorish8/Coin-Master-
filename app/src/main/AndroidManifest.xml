@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.coinmaster">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CoinMaster">
+        <activity android:name=".Collectyourcard" />
+        <activity android:name=".Concentrateoncoinsaccordingly" />
+        <activity android:name=".Finishallevents" />
+        <activity android:name=".Learnslotmachine" />
+        <activity android:name=".playitdaily" />
+        <activity android:name=".Guide" />
+        <activity android:name=".Collect" />
+        <activity android:name=".Setting" />
+        <activity android:name=".CoinMaster" />
+
+        <activity android:name=".Spin" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
