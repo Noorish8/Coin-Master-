@@ -61,7 +61,6 @@ class HomeActivity : AppCompatActivity() {
                 Log.e("respons>>>>>>",response+"")
                 Toast.makeText(this, response, Toast.LENGTH_LONG).show()
                 val jsonObject:JSONObject= JSONObject(response)
-
                 val status:String=jsonObject.getString("status")
                 val message:String=jsonObject.getString("message")
                 val jsonArray: JSONArray =jsonObject.getJSONArray("data")
@@ -139,6 +138,16 @@ class HomeActivity : AppCompatActivity() {
         imageViewlefttop.setOnClickListener {
             val intent=Intent(this,Guide::class.java)
             startActivity(intent)
+        }
+        imageViewleftbtm.setOnClickListener {
+            val intent=Intent(this,Coin::class.java)
+            startActivity(intent)
+
+        }
+        imageViewrighttop.setOnClickListener {
+            val intent=Intent(this,Coinandspin::class.java)
+            startActivity(intent)
+
         }
 
 //       val request:StringRequest= StringRequest(Request.Method.GET,url,Response.Listener {
