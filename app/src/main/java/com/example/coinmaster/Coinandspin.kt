@@ -14,14 +14,15 @@ import org.json.JSONObject
 
 class Coinandspin : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
-    lateinit var CoinAdapter: CoinAdapter
+    lateinit var adaptercoinandspin: Adaptercoinandspin
     val url: String = "https://gamland.ga/Game_Land_with_saumin/api.php"
     val i: Int = 0
-    var list: ArrayList<DataModalcoin> = ArrayList<DataModalcoin>()
+    var list: ArrayList<DataModalcoinandspin> = ArrayList<DataModalcoinandspin>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coinandspin)
         recyclerView = findViewById(R.id.recycoin)
+
 
 
         val stringRequest: StringRequest =
@@ -34,18 +35,19 @@ class Coinandspin : AppCompatActivity() {
                 val jsonArray: JSONArray = jsonObject.getJSONArray("data")
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject1: JSONObject = jsonArray.getJSONObject(i)
-                    val title: String = jsonObject1.getString("game")
+                    val game: String = jsonObject1.getString("game")
+                    //val img: String = jsonObject1.getString("img")
                     val image: String =
                         "https://gamland.ga/Game_Land_with_saumin/" + jsonObject1.getString("image")
-                    val dataModal = DataModalcoin()
+                    val dataModal = DataModalcoinandspin()
                     dataModal.img = image
-                    dataModal.title = title
+                    dataModal.img = game
                     list.add(dataModal)
                 }
-                CoinAdapter = CoinAdapter(this, list)
+                adaptercoinandspin= Adaptercoinandspin(this, list)
                 val layoutManager = LinearLayoutManager(this)
                 recyclerView.layoutManager = layoutManager
-                recyclerView.adapter = CoinAdapter
+                recyclerView.adapter = adaptercoinandspin
             },
                 Response.ErrorListener { error ->
                     Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
@@ -53,8 +55,9 @@ class Coinandspin : AppCompatActivity() {
                 override fun getParams(): Map<String, String> {
                     val params: MutableMap<String, String> = HashMap()
                     //Change with your post params
-                    params["f"] = "gameCategory"
-                    params["game"] = "Coin and spin"
+                    params["f"] = "gameCategoryReward"
+                    params["game"] = "Coin master"
+                    params["game_category"]="coinsspin"
                     return params
                 }
             }

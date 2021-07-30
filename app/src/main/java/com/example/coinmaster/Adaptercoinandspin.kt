@@ -1,7 +1,6 @@
 package com.example.coinmaster
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class Adaptercoinandspin
-    (val context: Context,val list: List<DataModalcoin>):
+class Adaptercoinandspin(val context: Context, val list: ArrayList<DataModalcoinandspin>):
     RecyclerView.Adapter<CoinAdapter.ViewHolder>() {
     private val inflater:LayoutInflater=
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)as LayoutInflater

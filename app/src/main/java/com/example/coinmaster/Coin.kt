@@ -3,21 +3,18 @@ package com.example.coinmaster
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.bumptech.glide.Glide
 import org.json.JSONArray
 import org.json.JSONObject
 
 class Coin : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
-    lateinit var CoinAdapter:CoinAdapter
+    lateinit var coinAdapter: CoinAdapter
 //    lateinit var imageViewapi: ImageView
 //    lateinit var textViewapi: TextView
     val url:String="https://gamland.ga/Game_Land_with_saumin/api.php"
@@ -49,10 +46,10 @@ class Coin : AppCompatActivity() {
                 list.add(dataModal)
 
             }
-            CoinAdapter=CoinAdapter(this,list)
+            coinAdapter=CoinAdapter(this,list)
             val layoutManager = LinearLayoutManager(this)
             recyclerView.layoutManager=layoutManager
-            recyclerView.adapter=CoinAdapter
+            recyclerView.adapter=coinAdapter
 
 //            Glide.with(this)
 //                .load(list.get(0).img)
@@ -65,8 +62,9 @@ class Coin : AppCompatActivity() {
             override fun getParams(): Map<String, String> {
                 val params: MutableMap<String, String> = HashMap()
                 //Change with your post params
-                params["f"] = "gameCategory"
-                params["game"] = "coin master"
+                params["f"] = "gameCategoryReward"
+                params["game"] = "Coin master"
+                params["game_category"]="coinsspin"
                 return params
             }
         }
