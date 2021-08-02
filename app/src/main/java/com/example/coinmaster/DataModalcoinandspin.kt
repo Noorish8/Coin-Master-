@@ -1,7 +1,8 @@
 package com.example.coinmaster
 
 class DataModalcoinandspin {
-    var game:String?=null
-    var img:String?=null
+    var dt:String?=""
+    var my_img:String?=""
+    var title:String?=""
 
 }

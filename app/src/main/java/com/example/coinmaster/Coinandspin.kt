@@ -35,13 +35,14 @@ class Coinandspin : AppCompatActivity() {
                 val jsonArray: JSONArray = jsonObject.getJSONArray("data")
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject1: JSONObject = jsonArray.getJSONObject(i)
-                    val game: String = jsonObject1.getString("game")
-                    //val img: String = jsonObject1.getString("img")
-                    val image: String =
-                        "https://gamland.ga/Game_Land_with_saumin/" + jsonObject1.getString("image")
+                    val dt: String = jsonObject1.getString("dt")
+                    val title: String = jsonObject1.getString("title")
+
+                    val my_img: String = "https://gamland.ga/Game_Land_with_saumin/" + jsonObject1.getString("my_img")
                     val dataModal = DataModalcoinandspin()
-                    dataModal.img = image
-                    dataModal.img = game
+                    dataModal.my_img = my_img
+                    dataModal.dt = dt
+                    dataModal.title=title
                     list.add(dataModal)
                 }
                 adaptercoinandspin= Adaptercoinandspin(this, list)

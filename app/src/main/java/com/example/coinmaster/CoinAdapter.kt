@@ -1,12 +1,14 @@
 package com.example.coinmaster
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
     RecyclerView.Adapter<CoinAdapter.ViewHolder>() {
@@ -27,14 +29,14 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
     }
 
     override fun onBindViewHolder(holder: CoinAdapter.ViewHolder, position: Int) {
-//        holder.textView1.text = list.get(position).title
-//        holder.textView2.text = list.get(position).dt
-//
-//        Log.e("list>>>>>>",list.get(position).title+"")
-//        // holder.image1.setImageResource(image[position])
-//        Glide.with(context)
-//            .load(list.get(position).img)
-//            .into(holder.image)
+        holder.textView1.text = list.get(position).title
+        holder.textView2.text = list.get(position).dt
+
+        Log.e("list>>>>>>",list.get(position).title+"")
+        // holder.image1.setImageResource(image[position])
+        Glide.with(context)
+            .load(list.get(position).img)
+            .into(holder.image)
     }
 
     override fun getItemCount(): Int {

@@ -133,6 +133,7 @@ class HomeActivity : AppCompatActivity() {
 
         imageViewrightbtm.setOnClickListener {
             val intent=Intent(this,Collect::class.java)
+
             startActivity(intent)
         }
         imageViewlefttop.setOnClickListener {
@@ -178,6 +179,7 @@ class HomeActivity : AppCompatActivity() {
 
                 override fun onInterstitialDismissed(ad: Ad) {
                     val intent = Intent(this@HomeActivity, CoinMaster::class.java)
+                    intent.putExtra("coins","coin master")
                     startActivity(intent)
                     progressDialog.hide()
                     // Interstitial dismissed callback

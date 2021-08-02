@@ -64,7 +64,7 @@ class Coin : AppCompatActivity() {
                 //Change with your post params
                 params["f"] = "gameCategoryReward"
                 params["game"] = "Coin master"
-                params["game_category"]="coinsspin"
+                params["game_category"]="coins"
                 return params
             }
         }

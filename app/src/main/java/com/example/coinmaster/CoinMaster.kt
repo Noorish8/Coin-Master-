@@ -31,6 +31,10 @@ class CoinMaster : AppCompatActivity() {
         setContentView(R.layout.activity_coin_master)
         imageViewsetting = findViewById(R.id.setting)
         imageViewback = findViewById(R.id.back)
+
+        val data: String? =intent.getStringExtra("coins")
+
+        Log.e("data>>>>",data+"")
 //        imageViewapi = findViewById(R.id.api1)
 //        textViewapi = findViewById(R.id.apitx)
         //listView=findViewById(R.id.list)
@@ -76,7 +80,7 @@ class CoinMaster : AppCompatActivity() {
                val params: MutableMap<String, String> = HashMap()
                //Change with your post params
                params["f"] = "gameCategory"
-               params["game"] = "coin master"
+               params["game"] = data+""
                return params
            }
        }

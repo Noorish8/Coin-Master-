@@ -25,9 +25,10 @@ class Adaptercoinandspin(val context: Context, val list: ArrayList<DataModalcoin
     }
 
     override fun onBindViewHolder(holder: CoinAdapter.ViewHolder, position: Int) {
-        holder.textView1.text = list.get(position).img
+        holder.textView1.text = list.get(position).title
+        holder.textView1.text = list.get(position).dt
         Glide.with(context)
-            .load(list.get(position).img)
+            .load(list.get(position).my_img)
             .into(holder.image)
 
     }
