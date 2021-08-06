@@ -1,84 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#192D55"
     tools:context=".Setting">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="@dimen/_350sdp"
-        android:layout_height="@dimen/_225sdp"
-        android:src="@drawable/imgpsh_fullsize_anim"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="-10dp" />
-
-    <ImageView
-        android:layout_width="@dimen/_164sdp"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/_142sdp"
         android:src="@drawable/setting_fullsize_anim"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="47dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/back"
         android:layout_width="@dimen/_91sdp"
         android:layout_height="@dimen/_33sdp"
+        android:layout_marginTop="44dp"
         android:src="@drawable/settingbck_fullsize_anim"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="40dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
 
-    <GridLayout
-        android:id="@+id/grid"
-        android:layout_width="249dp"
-        android:layout_height="432dp"
-        android:layout_marginBottom="16dp"
-        android:columnCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <RelativeLayout
+        android:layout_width="323dp"
+        android:layout_height="323dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginBottom="492dp">
 
-
-        <ImageView
-            android:id="@+id/like"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/like" />
-
-        <ImageView
-            android:id="@+id/share"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/share" />
-
-        <ImageView
-            android:id="@+id/term"
-            android:layout_width="120dp"
-            android:layout_height="124dp"
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="257dp"
+            android:layout_height="398dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginBottom="64dp"
+            android:columnCount="2">
 
 
-            android:src="@drawable/terms" />
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:src="@drawable/like" />
 
-        <ImageView
-            android:id="@+id/group"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/group" />
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/share" />
 
-        <ImageView
-            android:id="@+id/rate"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/star" />
+            <ImageView
+                android:id="@+id/term"
+                android:layout_width="120dp"
+                android:layout_height="124dp"
+                android:src="@drawable/terms" />
 
-        <ImageView
-            android:id="@+id/policy"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:src="@drawable/policy" />
-    </GridLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/group"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:src="@drawable/group" />
+
+            <ImageView
+                android:id="@+id/rate"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:src="@drawable/star" />
+
+            <ImageView
+                android:id="@+id/policy"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:src="@drawable/policy" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+
+                android:src="@drawable/imgpsh_fullsize_anim" />
+
+
+        </GridLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

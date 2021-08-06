@@ -75,9 +75,7 @@ class HomeActivity : AppCompatActivity() {
                     dataModal.game=game
                     dataModal.img=img
                    list.add(dataModal)
-
-
-                    //val imageViewurl: String ="https://gamland.ga/Game_Land_with_saumin/"+object.getstring("image")
+                //val imageViewurl: String ="https://gamland.ga/Game_Land_with_saumin/"+object.getstring("image")
                 }
 
                 Glide.with(this)
@@ -132,8 +130,8 @@ class HomeActivity : AppCompatActivity() {
 
 
         imageViewrightbtm.setOnClickListener {
-            val intent=Intent(this,Collect::class.java)
-
+            val intent=Intent(this,Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS,"spin")
             startActivity(intent)
         }
         imageViewlefttop.setOnClickListener {
@@ -142,11 +140,13 @@ class HomeActivity : AppCompatActivity() {
         }
         imageViewleftbtm.setOnClickListener {
             val intent=Intent(this,Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS,"coins")
             startActivity(intent)
 
         }
         imageViewrighttop.setOnClickListener {
-            val intent=Intent(this,Coinandspin::class.java)
+            val intent=Intent(this,Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS,"coinsspin")
             startActivity(intent)
 
         }
@@ -179,7 +179,7 @@ class HomeActivity : AppCompatActivity() {
 
                 override fun onInterstitialDismissed(ad: Ad) {
                     val intent = Intent(this@HomeActivity, CoinMaster::class.java)
-                    intent.putExtra("coins","coin master")
+                    intent.putExtra("Constant.INTENT_TAG_COINS","coin master")
                     startActivity(intent)
                     progressDialog.hide()
                     // Interstitial dismissed callback

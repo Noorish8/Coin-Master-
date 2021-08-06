@@ -1,12 +1,16 @@
 package com.example.coinmaster
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -17,8 +21,11 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
 
 
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val rlMain: RelativeLayout = view.findViewById(R.id.coin_recyl_list_rl_main)
             val textView1: TextView = view.findViewById(R.id.text1)
-            val textView2: TextView = view.findViewById(R.id.text2)
+            val textView2:TextView=view.findViewById(R.id.text2)
+
+           // val textView2: TextView = view.findViewById(R.id.text2)
             val image: ImageView = view.findViewById(R.id.image1)
 
     }
@@ -30,7 +37,14 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
 
     override fun onBindViewHolder(holder: CoinAdapter.ViewHolder, position: Int) {
         holder.textView1.text = list.get(position).title
-        holder.textView2.text = list.get(position).dt
+        holder.textView2.text=list.get(position).dt
+        holder.rlMain.setOnClickListener(View.OnClickListener {
+//            val intent= Intent(context,Spincoin1::class.java)
+//            intent.putExtra(Constant.INTENT_TAG_LINK, list.get(position).link)
+//            context.startActivity(intent)
+        })
+
+        //holder.textView2.text = list.get(position).dt
 
         Log.e("list>>>>>>",list.get(position).title+"")
         // holder.image1.setImageResource(image[position])

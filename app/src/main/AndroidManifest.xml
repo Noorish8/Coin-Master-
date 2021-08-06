@@ -12,9 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoinMaster">
-        <activity android:name=".Coinandspin"></activity>
+        <activity
+            android:name=".Spincoin1"
+            android:exported="true" />
+        <activity android:name=".Coinmaster1" />
         <activity android:name=".Coin" />
-        <activity android:name=".ListView" />
+
         <activity android:name=".Collectyourcard" />
         <activity android:name=".Concentrateoncoinsaccordingly" />
         <activity android:name=".Finishallevents" />
@@ -24,7 +27,7 @@
         <activity android:name=".Collect" />
         <activity android:name=".Setting" />
         <activity android:name=".CoinMaster" />
-        <activity android:name=".Spin" />
+
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

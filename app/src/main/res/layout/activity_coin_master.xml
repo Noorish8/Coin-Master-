@@ -4,127 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".Coin"
     android:background="#192D55">
 
-    <ImageView
-        android:id="@+id/api1"
-        android:layout_width="160dp"
-        android:layout_height="126dp"
-        android:layout_below="@+id/back"/>
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spin_middle_layout"
+        android:layout_gravity="center"
+        android:background="@drawable/sky2">
 
 
-    <TextView
-        android:id="@+id/apitx"
-        android:layout_width="239dp"
-        android:layout_height="247dp"
-        android:layout_below="@+id/api1"/>
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="82dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/back" />
 
-    <TextView
-        android:id="@+id/txcm1"
-        android:layout_width="206dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="460dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-
-        android:id="@+id/imageView10"
-        android:layout_width="534dp"
-        android:layout_height="0dp"
-
-        android:src="@drawable/sky2"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100sp"
-        android:layout_height="0dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="103dp"
-        android:src="@drawable/asset73"
-        app:layout_constraintBottom_toTopOf="@+id/txcm1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031" />
-
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="@dimen/_60sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:src="@drawable/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="58dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="42dp"
+            android:src="@drawable/asset69" />
+    </RelativeLayout>
 
 
     <ImageView
-        android:id="@+id/setting"
-        android:layout_width="@dimen/_46sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:src="@drawable/asset69"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
-<!--<RelativeLayout-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
+        android:layout_width="232dp"
+        android:layout_height="119dp"
+        android:layout_below="@+id/top"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="-7dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:src="@drawable/asset72" />
 
-<!--    <ListView-->
-<!--        android:id="@+id/list"-->
-<!--        android:layout_width="382dp"-->
-<!--        android:layout_height="356dp"-->
-<!--        android:layout_marginStart="11dp"-->
-<!--        android:layout_marginLeft="11dp"-->
-<!--        android:layout_marginTop="131dp"-->
-<!--        android:layout_marginEnd="18dp"-->
-<!--        android:layout_marginRight="18dp"-->
-<!--        android:layout_marginBottom="244dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        -->
-<!--        app:layout_constraintVertical_bias="0.506">-->
+    <ImageView
+        android:id="@+id/imageViewcoinmaster"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:src="@drawable/asset73" />
 
-<!--    </ListView>-->
-<!--</RelativeLayout>-->
+    <RelativeLayout
+        android:id="@+id/btm"
+        android:layout_width="match_parent"
+        android:layout_height="448dp"
+        android:layout_below="@+id/imageViewcoinmaster"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="@dimen/_50sdp">
 
-    <!--    <Button-->
-    <!--        android:id="@+id/button25spin"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginBottom="355dp"-->
-    <!--        android:text="25 spin"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
-    <!--        app:layout_constraintHorizontal_bias="0.493"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/imageView10"-->
-    <!--        app:layout_constraintVertical_bias="0.882" />-->
-
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycoin"
+            android:layout_width="match_parent"
+            android:layout_height="462dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginRight="42dp"
+            android:layout_marginBottom="20dp" />
+    </RelativeLayout>
 </RelativeLayout>
 
 

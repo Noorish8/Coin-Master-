@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -17,7 +19,9 @@ class CoinMaster : AppCompatActivity() {
 //    lateinit var textViewapi: TextView
     val url:String="https://gamland.ga/Game_Land_with_saumin/api.php"
     val i:Int=0
-    var list:ArrayList<DataModalcoin> = ArrayList<DataModalcoin>()
+    lateinit var recyclerView:RecyclerView
+
+    var list:ArrayList<DataModal> = ArrayList<DataModal>()
     //lateinit var listView: ListView
     private var backPressedTime:Long = 0
 
@@ -31,8 +35,11 @@ class CoinMaster : AppCompatActivity() {
         setContentView(R.layout.activity_coin_master)
         imageViewsetting = findViewById(R.id.setting)
         imageViewback = findViewById(R.id.back)
+        recyclerView=findViewById(R.id.recycoin)
 
-        val data: String? =intent.getStringExtra("coins")
+        val data: String? =intent.getStringExtra(Constant.INTENT_TAG_COINS)
+        //val description:String?=intent.getStringExtra(Constant.INTENT_TAG_LINK)
+
 
         Log.e("data>>>>",data+"")
 //        imageViewapi = findViewById(R.id.api1)
@@ -47,8 +54,8 @@ class CoinMaster : AppCompatActivity() {
         //list=ArrayList<DataModalcm>()
        val stringRequest:StringRequest=object :StringRequest(Method.POST,url,Response.Listener {
            response ->
-           Log.i("respons>>>>>>",response+"")
-           Toast.makeText(this, response, Toast.LENGTH_LONG).show()
+           Log.e("responscoinmaster>>>>>>",response+"")
+           //Toast.makeText(this, response, Toast.LENGTH_LONG).show()
            val jsonObject:JSONObject= JSONObject(response)
 //           val status:String=jsonObject.getString("status")
 //           val message:String=jsonObject.getString("message")
@@ -57,11 +64,15 @@ class CoinMaster : AppCompatActivity() {
                val jsonObject1:JSONObject=jsonArray.getJSONObject(i)
                val title:String=jsonObject1.getString("title")
                val dt:String=jsonObject1.getString("dt")
-               val image: String = "https://gamland.ga/Game_Land_with_saumin/"+jsonObject1.getString("image")
-               val dataModal=DataModalcoin()
+               val link:String=jsonObject1.getString("link")
+               val description:String=jsonObject1.getString("description")
+               val image: String = "https://gamland.ga/Game_Land_with_saumin/"+jsonObject1.getString("img")
+               val dataModal=DataModal()
                dataModal.img=image
                dataModal.title=title
                dataModal.dt=dt
+               dataModal.link=link
+               dataModal.description=description
                list.add(dataModal)
 
            }
@@ -72,15 +83,26 @@ class CoinMaster : AppCompatActivity() {
            Log.e("title>>>>>", title as String)
 //           customAdapter = CustomAdapter(this,list)
 //           listView.adapter = customAdapter
+
+           val customAdapter=CustomAdapter(this,list)
+           val layoutManager = LinearLayoutManager(this)
+           recyclerView.layoutManager=layoutManager
+           recyclerView.adapter=customAdapter
+
+
+//           customAdapter =CustomAdapter(this,list)
+//           val layoutManager = LinearLayoutManager(this)
+//           recyclerView.layoutManager=layoutManager
+//           recyclerView.adapter=coinAdapter
        },
            Response.ErrorListener { error ->
-               Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
+               //Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
        }) {
            override fun getParams(): Map<String, String> {
                val params: MutableMap<String, String> = HashMap()
                //Change with your post params
                params["f"] = "gameCategory"
-               params["game"] = data+""
+               params["game"] = "coin master"
                return params
            }
        }

@@ -1,5 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="spin_middle_layout">120dp</dimen>
+    <dimen name="spin_middle_layout">240dp</dimen>
+
 
 </resources>
