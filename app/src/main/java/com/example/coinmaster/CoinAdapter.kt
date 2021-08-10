@@ -44,6 +44,14 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
 //            context.startActivity(intent)
         })
 
+        holder.image.setOnClickListener {
+            val intent=Intent(context,Coinmaster1::class.java)
+            intent.putExtra("link",list.get(position).link)
+            intent.putExtra("description",list.get(position).description)
+            intent.putExtra("dt",list.get(position).dt)
+            context.startActivity(intent)
+        }
+
         //holder.textView2.text = list.get(position).dt
 
         Log.e("list>>>>>>",list.get(position).title+"")

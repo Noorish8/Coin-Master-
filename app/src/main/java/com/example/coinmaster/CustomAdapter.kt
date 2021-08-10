@@ -34,10 +34,12 @@ class CustomAdapter(val context: Context, val list: ArrayList<DataModal>):
     override fun onBindViewHolder(holder: CustomAdapter.ViewHolder, position: Int) {
         holder.textView6.text = list.get(position).title
         holder.textView7.text = list.get(position).dt
+
         holder.image.setOnClickListener {
             val intent=Intent(context,Coinmaster1::class.java)
             intent.putExtra("link",list.get(position).link)
             intent.putExtra("description",list.get(position).description)
+            intent.putExtra("dt",list.get(position).dt)
             context.startActivity(intent)
         }
 

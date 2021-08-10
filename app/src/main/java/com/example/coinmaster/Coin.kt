@@ -35,8 +35,6 @@ class Coin : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
         val data: String? =intent.getStringExtra(Constant.INTENT_TAG_COINS)
 
         Log.e("data>>>>",data+"")

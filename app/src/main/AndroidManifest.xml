@@ -16,6 +16,9 @@
             android:name=".Spincoin1"
             android:exported="true" />
         <activity android:name=".Coinmaster1" />
+
+
+
         <activity android:name=".Coin" />
 
         <activity android:name=".Collectyourcard" />
@@ -28,6 +31,8 @@
         <activity android:name=".Setting" />
         <activity android:name=".CoinMaster" />
 
+
+
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -35,6 +40,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

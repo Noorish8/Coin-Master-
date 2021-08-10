@@ -59,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
         val stringRequest: StringRequest = object : StringRequest(Method.POST, url,
             Response.Listener { response ->
                 Log.e("respons>>>>>>",response+"")
-                Toast.makeText(this, response, Toast.LENGTH_LONG).show()
+
                 val jsonObject:JSONObject= JSONObject(response)
                 val status:String=jsonObject.getString("status")
                 val message:String=jsonObject.getString("message")

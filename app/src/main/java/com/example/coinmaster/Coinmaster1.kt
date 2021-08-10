@@ -1,9 +1,13 @@
 package com.example.coinmaster
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -17,37 +21,80 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class Coinmaster1 : AppCompatActivity() {
-    lateinit var textView: TextView
+    lateinit var textViewlink: TextView
     lateinit var textViewdescription: TextView
     lateinit var imageViewcollect: ImageView
+    lateinit var textViewdt: TextView
+    lateinit var textViewback: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coinmaster1)
         imageViewcollect=findViewById(R.id.collect)
+
+        textViewlink=findViewById(R.id.textlink)
+        textViewdescription=findViewById(R.id.textdescription)
+        textViewdt=findViewById(R.id.textdt)
+        textViewback=findViewById(R.id.back)
+        textViewback.setOnClickListener {
+            val intent=Intent(this,CoinMaster::class.java)
+            startActivity(intent)
+        }
+
+        val data: String? =intent.getStringExtra("link")
+        val description:String?=intent.getStringExtra("description")
+        val dt:String?=intent.getStringExtra("dt")
+
+        Log.e("dt>>>>",dt+"")
+
+        textViewlink.text=data
+        textViewdescription.text=description
+        textViewdt.text=dt
         imageViewcollect.setOnClickListener {
 
             val modalSheetView = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
             val dialog = BottomSheetDialog(this)
+
+            val textViewredeem:TextView=modalSheetView.findViewById(R.id.Redeem)
+            val textViewlink:TextView=modalSheetView.findViewById(R.id.Share)
+            val textViewCencel:TextView=modalSheetView.findViewById(R.id.Cencel)
+            val textViewCopy:TextView=modalSheetView.findViewById(R.id.Copy)
+
+            textViewCencel.setOnClickListener {
+                dialog.dismiss()
+            }
+            textViewlink.setOnClickListener {
+
+                val sentIntent:Intent=Intent()
+                sentIntent.setAction(Intent.ACTION_SEND)
+                sentIntent.putExtra(Intent.EXTRA_TEXT, data)
+                sentIntent.setType("text/plain")
+                val shredIntent:Intent=Intent.createChooser(sentIntent, null)
+                startActivity(shredIntent)
+                Toast.makeText(this,"share the link",Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+
+            textViewCopy.setOnClickListener {
+                lateinit var clipboardManager: ClipboardManager
+                    clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clipData = ClipData.newPlainText("key", data)
+                    clipboardManager.setPrimaryClip(clipData)
+                Toast.makeText(this,"copy the link",Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+
+                }
+
+            //click example for copy, share
+            textViewredeem.setOnClickListener {
+                dialog.dismiss()
+                Toast.makeText(this,"reedem",Toast.LENGTH_SHORT).show()
+            }
             dialog.setContentView(modalSheetView)
             dialog.show()
 
-        }
-
-
-
-    textView=findViewById(R.id.textlink)
-    textViewdescription=findViewById(R.id.textdescription)
-
-        val data: String? =intent.getStringExtra("link")
-        val description:String?=intent.getStringExtra("description")
-
-        Log.e("data>>>>",data+"")
-
-    textView.text=data
-  textViewdescription.text=description
-
-
+            }
+    }
 
     }
-}
