@@ -16,30 +16,36 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.facebook.ads.AdSize
+import com.facebook.ads.AdView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.activity_faceboobadsb.*
 import org.json.JSONArray
 import org.json.JSONObject
 
 class Coinmaster1 : AppCompatActivity() {
+    lateinit var adView: AdView
     lateinit var textViewlink: TextView
     lateinit var textViewdescription: TextView
     lateinit var imageViewcollect: ImageView
     lateinit var textViewdt: TextView
-    lateinit var textViewback: TextView
-
+   lateinit var back:ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coinmaster1)
+
+
         imageViewcollect=findViewById(R.id.collect)
 
         textViewlink=findViewById(R.id.textlink)
         textViewdescription=findViewById(R.id.textdescription)
         textViewdt=findViewById(R.id.textdt)
-        textViewback=findViewById(R.id.back)
-        textViewback.setOnClickListener {
-            val intent=Intent(this,CoinMaster::class.java)
-            startActivity(intent)
+
+        back=findViewById(R.id.back);
+
+        back.setOnClickListener {
+            onBackPressed()
         }
 
         val data: String? =intent.getStringExtra("link")
@@ -87,6 +93,7 @@ class Coinmaster1 : AppCompatActivity() {
                 }
 
             //click example for copy, share
+
             textViewredeem.setOnClickListener {
                 dialog.dismiss()
                 Toast.makeText(this,"reedem",Toast.LENGTH_SHORT).show()
@@ -95,6 +102,20 @@ class Coinmaster1 : AppCompatActivity() {
             dialog.show()
 
             }
+        adView= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
+        banner_container.addView(adView)//add pluging id 'kotlin-android-extensions'
+        adView.loadAd()
+    }
+
+    override fun onDestroy() {
+        if (adView != null){
+            adView.destroy()
+        }
+        super.onDestroy()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     }

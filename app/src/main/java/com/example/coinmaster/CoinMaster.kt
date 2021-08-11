@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.facebook.ads.AdSize
+import com.facebook.ads.AdView
+import kotlinx.android.synthetic.main.activity_faceboobadsb.*
 import org.json.JSONArray
 import org.json.JSONObject
 
 class CoinMaster : AppCompatActivity() {
+    lateinit var adView: AdView
+
 //    lateinit var imageViewapi: ImageView
 //    lateinit var textViewapi: TextView
     val url:String="https://gamland.ga/Game_Land_with_saumin/api.php"
@@ -33,6 +38,7 @@ class CoinMaster : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coin_master)
+
         imageViewsetting = findViewById(R.id.setting)
         imageViewback = findViewById(R.id.back)
         recyclerView=findViewById(R.id.recycoin)
@@ -135,5 +141,16 @@ class CoinMaster : AppCompatActivity() {
          val intent=Intent(this,HomeActivity::class.java)
          startActivity(intent)
         }
+        adView= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
+        banner_container.addView(adView)//add pluging id 'kotlin-android-extensions'
+        adView.loadAd()
+    }
+
+    override fun onDestroy() {
+        if (adView != null){
+            adView.destroy()
+        }
+        super.onDestroy()
+
     }
 }

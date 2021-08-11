@@ -26,6 +26,7 @@ import org.json.JSONObject
 
 class HomeActivity : AppCompatActivity() {
 
+
     val url:String="https://gamland.ga/Game_Land_with_saumin/api.php"
     val i:Int=0
     var list:ArrayList<DataModal> = ArrayList<DataModal>()
@@ -47,6 +48,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
 
         imageViewimage1 = findViewById(R.id.image1)
         imageViewlefttop = findViewById(R.id.Guide)
@@ -97,22 +99,7 @@ class HomeActivity : AppCompatActivity() {
                 Glide.with(this)
                     .load(list.get(4).img)
                     .into(imageViewleftbtm)
-//                try {
-//                    val jsonObject:JSONObject= JSONObject(response)
-//                    val result:String=jsonObject.getString("result")
-//
-//
-//                    Glide.with(MainActivity.this)
-//                        .load(jsonObject1.getString(""))
-//                        .into()
-//
-//
-//                    //Parse your api responce here
-//                    /*val intent = Intent(this, MainActivity::class.java)
-//                    startActivity(intent)*/
-//                } catch (e: JSONException) {
-//                    e.printStackTrace()
-//                }
+
             },
             Response.ErrorListener { error ->
                 Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()
@@ -151,12 +138,6 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-//       val request:StringRequest= StringRequest(Request.Method.GET,url,Response.Listener {
-//                response ->
-//            Log.e("response>>>>>>",response)
-//            val jsonObject:JSONObject= JSONObject(response)
-//            val name :String=jsonObject.getString("name")
-//            imageViewimage1.text=name
 
         imageViewimage1.setOnClickListener {
 
@@ -219,29 +200,10 @@ class HomeActivity : AppCompatActivity() {
                 interstitialAd!!.buildLoadAdConfig()
                     .withAdListener(interstitialAdListener)
                     .build()
-
             )
 
         }
     }
-//        imageViewlefttop.setOnClickListener {
-////            val intent = Intent(this, MainActivity3::class.java)
-////            startActivity(intent)
-//
-//        }
-//        imageViewleftbtm.setOnClickListener {
-////            val intent = Intent(this, MainActivity3::class.java)
-////            startActivity(intent)
-//
-//        }
-//        imageViewrighttop.setOnClickListener {
-////            val intent = Intent(this, MainActivity3::class.java)
-////            startActivity(intent)
-//
-//        }
-//        imageViewrightbtm.setOnClickListener {
-////            val intent = Intent(this, Spin::class.java)
-////            startActivity(intent)
 
     override fun onBackPressed() {
 //        val builder = AlertDialog.Builder(this)

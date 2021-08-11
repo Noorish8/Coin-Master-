@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".Guide"
     android:background="#192D55">
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="58dp"
@@ -24,15 +26,16 @@
         android:id="@+id/imageViewcoinmaster"
         android:layout_width="139dp"
         android:layout_height="164dp"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:src="@drawable/asset73"
-        android:layout_marginLeft="@dimen/_100sdp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/asset73" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="523dp"
         android:layout_below="@+id/imageViewcoinmaster"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="@dimen/_30sdp"
 
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-70dp">
@@ -98,13 +101,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginStart="61dp"
             android:layout_marginLeft="61dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="14dp"
             android:layout_marginRight="14dp"
             android:layout_marginBottom="0dp"
             android:text="1.Play it and Grab the bonus"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_13sdp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -118,13 +121,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginStart="57dp"
             android:layout_marginLeft="57dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="18dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="13dp"
             android:text="2.Learn slot machine Machanism"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_13sdp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -138,13 +141,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginStart="63dp"
             android:layout_marginLeft="63dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginBottom="11dp"
             android:text="3.Finish all events"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_13sdp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -159,13 +162,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginStart="55dp"
             android:layout_marginLeft="55dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="26dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="11dp"
             android:text="4.Concentrate on coin accordingly"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_13sdp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -184,7 +187,7 @@
             android:layout_marginRight="18dp"
             android:text="5.Collect your card"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_13sdp" />
     </RelativeLayout>
 
 

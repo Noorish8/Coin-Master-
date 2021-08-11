@@ -91,7 +91,16 @@
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:layout_marginBottom="20dp" />
+
     </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </RelativeLayout>
 
 

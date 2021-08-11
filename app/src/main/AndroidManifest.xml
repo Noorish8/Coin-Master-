@@ -13,14 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoinMaster">
         <activity
+            android:name=".faceboobadsb"
+            android:exported="true" />
+        <activity
             android:name=".Spincoin1"
             android:exported="true" />
         <activity android:name=".Coinmaster1" />
-
-
-
         <activity android:name=".Coin" />
-
         <activity android:name=".Collectyourcard" />
         <activity android:name=".Concentrateoncoinsaccordingly" />
         <activity android:name=".Finishallevents" />
@@ -28,18 +27,16 @@
         <activity android:name=".playitdaily" />
         <activity android:name=".Guide" />
         <activity android:name=".Collect" />
-        <activity android:name=".Setting" />
-        <activity android:name=".CoinMaster" />
-
-
-
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Setting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".CoinMaster" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity">
 
         </activity>
     </application>
