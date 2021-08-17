@@ -6,9 +6,6 @@
     android:layout_height="wrap_content"
     android:id="@+id/coin_list_rl_main"
     android:background="#192D55">
-
-
-
         <ImageView
             android:id="@+id/imgcm1"
             android:layout_width="match_parent"

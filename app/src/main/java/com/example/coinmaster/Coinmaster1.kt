@@ -22,7 +22,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_faceboobadsb.*
 import org.json.JSONArray
 import org.json.JSONObject
-
 class Coinmaster1 : AppCompatActivity() {
     lateinit var adView: AdView
     lateinit var textViewlink: TextView
@@ -30,19 +29,23 @@ class Coinmaster1 : AppCompatActivity() {
     lateinit var imageViewcollect: ImageView
     lateinit var textViewdt: TextView
    lateinit var back:ImageView
+   lateinit var setting:ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coinmaster1)
 
-
+        setting=findViewById(R.id.setting)
+        setting.setOnClickListener {
+            val intent = Intent(this, Setting::class.java)
+            startActivity(intent)
+        }
         imageViewcollect=findViewById(R.id.collect)
-
         textViewlink=findViewById(R.id.textlink)
         textViewdescription=findViewById(R.id.textdescription)
         textViewdt=findViewById(R.id.textdt)
 
-        back=findViewById(R.id.back);
+        back=findViewById(R.id.back)
 
         back.setOnClickListener {
             onBackPressed()
@@ -51,6 +54,7 @@ class Coinmaster1 : AppCompatActivity() {
         val data: String? =intent.getStringExtra("link")
         val description:String?=intent.getStringExtra("description")
         val dt:String?=intent.getStringExtra("dt")
+
 
         Log.e("dt>>>>",dt+"")
 

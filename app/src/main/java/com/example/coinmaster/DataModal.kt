@@ -1,13 +1,13 @@
 package com.example.coinmaster
 
 class DataModal {
-    var status:String?=""
-    var title:String?=null
-    var message:String?=null
-    var game:String?=null
-    var img:String?=null
+    var status:String=""
+    var title:String=""
+    var message:String=""
+    var game:String=""
+    var img:String=""
     var link:String=""
-    var description:String?=""
+    var description:String=""
 
 
    // var title:String=""

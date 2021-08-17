@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".playitdaily"
     android:background="#192D55">
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="@dimen/_50sdp"
@@ -14,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.056"
-        tools:layout_editor_absoluteX="-10dp"/>
+        tools:layout_editor_absoluteX="-10dp" />
 
     <TextView
         android:id="@+id/text"

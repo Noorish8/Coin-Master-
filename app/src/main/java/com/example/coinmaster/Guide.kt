@@ -51,5 +51,6 @@ class Guide : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 }

@@ -9,15 +9,22 @@
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/drawable-xhdpi/ic_launcher_foreground.xml" value="0.18796296296296297" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/drawable/buttomshape.xml" value="0.2203125" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/drawable/ic_launcher_background.xml" value="0.45" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout-large/activity_home.xml" value="0.1728395061728395" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout-normal/activity_home.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout-small/activity_home.xml" value="0.16621376811594202" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_coin.xml" value="0.15" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_coin_master.xml" value="0.22" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_coinandspin.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_coinmaster1.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_collect.xml" value="0.1" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_collectyourcard.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_faceboobadsb.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_facebooknacads.xml" value="0.1503623188405797" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_guide.xml" value="0.16621376811594202" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_main.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_main_activitynative.xml" value="0.15579710144927536" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_nativebannerads.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_setting.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/activity_spincoin1.xml" value="0.19021739130434784" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.20416666666666666" />
@@ -25,6 +32,10 @@
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/coinandspinlist.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/coinrecylist.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/list1.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/nativeadlaout.xml" value="0.15579710144927536" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/nativeadlayout.xml" value="0.1503623188405797" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/nativebannerasd.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/rowitem.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/spin.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/layout/spinlist.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/sshir/StudioProjects/Coin-Master-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />

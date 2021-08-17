@@ -54,8 +54,16 @@ class Setting : AppCompatActivity() {
             intent.data = Uri.parse("https://play.google.com/store/apps/details?id=com.free.spining.coins")
             startActivity(intent)
         }
-
-
+        group.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://m.facebook.com/groups/coinmasterfreespinscoinmaster")
+            startActivity(intent)
+        }
+        policy.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://gamland.ga/Game_Land_with_saumin/GameLand_Other/Privacy_Policy")
+            startActivity(intent)
+        }
     }
     }
 //            fun getUrlFromIntent(view: View) {

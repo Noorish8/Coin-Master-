@@ -27,9 +27,9 @@ import org.json.JSONObject
 class HomeActivity : AppCompatActivity() {
 
 
-    val url:String="https://gamland.ga/Game_Land_with_saumin/api.php"
-    val i:Int=0
-    var list:ArrayList<DataModal> = ArrayList<DataModal>()
+    val url: String = "https://gamland.ga/Game_Land_with_saumin/api.php"
+    val i: Int = 0
+    var list: ArrayList<DataModal> = ArrayList<DataModal>()
     private var interstitialAd: InterstitialAd? = null
     private val TAG: String = HomeActivity::class.java.getSimpleName()
 
@@ -52,32 +52,33 @@ class HomeActivity : AppCompatActivity() {
 
         imageViewimage1 = findViewById(R.id.image1)
         imageViewlefttop = findViewById(R.id.Guide)
-        //Glide.with(this).load("https://mrveep.com/upload/baby1.jpg").into(imageViewlefttop)
+        //Glide.with(this).load("https://mrveep.com/uplo    ad/baby1.jpg").into(imageViewlefttop)
         imageViewleftbtm = findViewById(R.id.Coin)
         imageViewrighttop = findViewById(R.id.CoinandSpin)
         imageViewrightbtm = findViewById(R.id.Spin)
 
-        list=ArrayList<DataModal>()
+        list = ArrayList<DataModal>()
         val stringRequest: StringRequest = object : StringRequest(Method.POST, url,
             Response.Listener { response ->
-                Log.e("respons>>>>>>",response+"")
+                Log.e("respons>>>>>>", response + "")
 
-                val jsonObject:JSONObject= JSONObject(response)
-                val status:String=jsonObject.getString("status")
-                val message:String=jsonObject.getString("message")
-                val jsonArray: JSONArray =jsonObject.getJSONArray("data")
+                val jsonObject: JSONObject = JSONObject(response)
+                val status: String = jsonObject.getString("status")
+                val message: String = jsonObject.getString("message")
+                val jsonArray: JSONArray = jsonObject.getJSONArray("data")
                 for (i in 0 until jsonArray.length()) {
                     val jsonobject1: JSONObject = jsonArray.getJSONObject(i)
                     val game: String = jsonobject1.getString("game")
 
-                    val img: String = "https://gamland.ga/Game_Land_with_saumin/"+jsonobject1.getString("img")
-                    val dataModal=DataModal()
-                    dataModal.status=status
-                    dataModal.message=message
-                    dataModal.game=game
-                    dataModal.img=img
-                   list.add(dataModal)
-                //val imageViewurl: String ="https://gamland.ga/Game_Land_with_saumin/"+object.getstring("image")
+                    val img: String =
+                        "https://gamland.ga/Game_Land_with_saumin/" + jsonobject1.getString("img")
+                    val dataModal = DataModal()
+                    dataModal.status = status
+                    dataModal.message = message
+                    dataModal.game = game
+                    dataModal.img = img
+                    list.add(dataModal)
+                    //val imageViewurl: String ="https://gamland.ga/Game_Land_with_saumin/"+object.getstring("image")
                 }
 
                 Glide.with(this)
@@ -117,33 +118,28 @@ class HomeActivity : AppCompatActivity() {
 
 
         imageViewrightbtm.setOnClickListener {
-            val intent=Intent(this,Coin::class.java)
-            intent.putExtra(Constant.INTENT_TAG_COINS,"spin")
+            val intent = Intent(this, Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS, "spin")
             startActivity(intent)
         }
         imageViewlefttop.setOnClickListener {
-            val intent=Intent(this,Guide::class.java)
+            val intent = Intent(this, Guide::class.java)
             startActivity(intent)
         }
         imageViewleftbtm.setOnClickListener {
-            val intent=Intent(this,Coin::class.java)
-            intent.putExtra(Constant.INTENT_TAG_COINS,"coins")
+            val intent = Intent(this, Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS, "coins")
             startActivity(intent)
 
         }
         imageViewrighttop.setOnClickListener {
-            val intent=Intent(this,Coin::class.java)
-            intent.putExtra(Constant.INTENT_TAG_COINS,"coinsspin")
+            val intent = Intent(this, Coin::class.java)
+            intent.putExtra(Constant.INTENT_TAG_COINS, "coinsspin")
             startActivity(intent)
 
         }
 
-
-        imageViewimage1.setOnClickListener {
-
-            val progressDialog = ProgressDialog(this)
-            progressDialog.setMessage("Ads is loading,please wait")
-            progressDialog.show()
+        imageViewlefttop.setOnClickListener {
 
             //        interstitialAd = InterstitialAd(this, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
             AudienceNetworkAds.initialize(this)
@@ -159,10 +155,10 @@ class HomeActivity : AppCompatActivity() {
                 }
 
                 override fun onInterstitialDismissed(ad: Ad) {
-                    val intent = Intent(this@HomeActivity, CoinMaster::class.java)
-                    intent.putExtra("Constant.INTENT_TAG_COINS","coin master")
+                    val intent = Intent(this@HomeActivity, Guide::class.java)
+                    //intent.putExtra("Constant.INTENT_TAG_COINS", "coin master")
                     startActivity(intent)
-                    progressDialog.hide()
+
                     // Interstitial dismissed callback
                     val e = Log.e(TAG, "Interstitial ad dismissed.")
 
@@ -202,10 +198,26 @@ class HomeActivity : AppCompatActivity() {
                     .build()
             )
 
-        }
-    }
 
-    override fun onBackPressed() {
+        }
+
+
+            imageViewimage1.setOnClickListener {
+                callaAds()
+            }
+        imageViewrightbtm.setOnClickListener {
+            callaAds()
+        }
+
+        imageViewleftbtm.setOnClickListener {
+            callaAds()
+        }
+        imageViewrighttop.setOnClickListener {
+            callaAds()
+        }
+
+             fun onBackPressed() {
+
 //        val builder = AlertDialog.Builder(this)
 //        builder.setMessage("You want to exit")
 //        builder.setPositiveButton("yes", { dialogInterface: DialogInterface, i: Int ->
@@ -213,7 +225,8 @@ class HomeActivity : AppCompatActivity() {
 //        })
 //        builder.setNegativeButton("No", { dialogInterface: DialogInterface, i: Int ->
 //            builder.show()
-//        })
+//        }).show()
+             }
 
 
 //        AlertDialog.Builder(this)
@@ -226,5 +239,70 @@ class HomeActivity : AppCompatActivity() {
 //                }
 //            }).show()
 
+
     }
-}
+    fun callaAds() {
+
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setMessage("Ads is loading,please wait")
+        progressDialog.show()
+
+        //        interstitialAd = InterstitialAd(this, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
+        AudienceNetworkAds.initialize(this)
+        //  AudienceNetworkAds.initialize(this)
+//         AdSettings.setIntegrationErrorMode(INTEGRATION_ERROR_CRASH_DEBUG_MODE);
+        interstitialAd = InterstitialAd(this, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID")
+        // Create listeners for the Interstitial Ad
+        // Create listeners for the Interstitial Ad
+        val interstitialAdListener: InterstitialAdListener = object : InterstitialAdListener {
+            override fun onInterstitialDisplayed(ad: Ad) {
+                // Interstitial ad displayed callback
+                Log.e(TAG, "Interstitial ad displayed.")
+            }
+
+            override fun onInterstitialDismissed(ad: Ad) {
+                val intent = Intent(this@HomeActivity, CoinMaster::class.java)
+                intent.putExtra("Constant.INTENT_TAG_COINS", "coin master")
+                startActivity(intent)
+                progressDialog.hide()
+                // Interstitial dismissed callback
+                val e = Log.e(TAG, "Interstitial ad dismissed.")
+
+            }
+
+            override fun onError(ad: Ad, adError: AdError) {
+                // Ad error callback
+                Log.e(TAG, "Interstitial ad failed to load: " + adError.errorMessage)
+            }
+
+            override fun onAdLoaded(ad: Ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(TAG, "Interstitial ad is loaded and ready to be displayed!")
+                // Show the ad
+                interstitialAd!!.show()
+            }
+
+            override fun onAdClicked(ad: Ad) {
+                // Ad clicked callback
+                Log.d(TAG, "Interstitial ad clicked!")
+            }
+
+            override fun onLoggingImpression(ad: Ad) {
+                // Ad impression logged callback
+                Log.d(TAG, "Interstitial ad impression logged!")
+            }
+        }
+
+        // For auto play video ads, it's recommended to load the ad
+        // at least 30 seconds before it is shown
+
+        // For auto play video ads, it's recommended to load the ad
+        // at least 30 seconds before it is shown
+        interstitialAd!!.loadAd(
+            interstitialAd!!.buildLoadAdConfig()
+                .withAdListener(interstitialAdListener)
+                .build()
+        )
+
+    }
+        }

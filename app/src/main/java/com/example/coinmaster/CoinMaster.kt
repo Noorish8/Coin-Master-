@@ -13,12 +13,15 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.facebook.ads.AdSize
 import com.facebook.ads.AdView
+import kotlinx.android.synthetic.main.activity_coin_master.*
 import kotlinx.android.synthetic.main.activity_faceboobadsb.*
+import kotlinx.android.synthetic.main.activity_faceboobadsb.banner_container
 import org.json.JSONArray
 import org.json.JSONObject
 
 class CoinMaster : AppCompatActivity() {
     lateinit var adView: AdView
+    lateinit var adView1:AdView
 
 //    lateinit var imageViewapi: ImageView
 //    lateinit var textViewapi: TextView
@@ -114,10 +117,6 @@ class CoinMaster : AppCompatActivity() {
        }
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
-
-
-
-
         //backToast = Toast.makeText(this, "Press back again to leave this page.", Toast.LENGTH_LONG)
 //        if (backPressedTime + 2000 > System.currentTimeMillis()) {
 //            // backToast.cancel()
@@ -141,6 +140,10 @@ class CoinMaster : AppCompatActivity() {
          val intent=Intent(this,HomeActivity::class.java)
          startActivity(intent)
         }
+        adView1= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
+        banner_container1.addView(adView1)//add pluging id 'kotlin-android-extensions'
+        adView1.loadAd()
+
         adView= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
         banner_container.addView(adView)//add pluging id 'kotlin-android-extensions'
         adView.loadAd()
@@ -151,6 +154,7 @@ class CoinMaster : AppCompatActivity() {
             adView.destroy()
         }
         super.onDestroy()
+
 
     }
 }

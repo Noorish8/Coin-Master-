@@ -13,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
 class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
     RecyclerView.Adapter<CoinAdapter.ViewHolder>() {
     private val inflater: LayoutInflater =
@@ -24,8 +23,7 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
             val rlMain: RelativeLayout = view.findViewById(R.id.coin_recyl_list_rl_main)
             val textView1: TextView = view.findViewById(R.id.text1)
             val textView2:TextView=view.findViewById(R.id.text2)
-
-           // val textView2: TextView = view.findViewById(R.id.text2)
+            // val textView2: TextView = view.findViewById(R.id.text2)
             val image: ImageView = view.findViewById(R.id.image1)
 
     }
@@ -43,7 +41,6 @@ class CoinAdapter(val context: Context, val list: ArrayList<DataModalcoin>):
 //            intent.putExtra(Constant.INTENT_TAG_LINK, list.get(position).link)
 //            context.startActivity(intent)
         })
-
         holder.image.setOnClickListener {
             val intent=Intent(context,Coinmaster1::class.java)
             intent.putExtra("link",list.get(position).link)

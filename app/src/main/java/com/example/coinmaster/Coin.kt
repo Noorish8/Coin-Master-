@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.facebook.ads.AdSize
+import com.facebook.ads.AdView
+import kotlinx.android.synthetic.main.activity_faceboobadsb.*
 import org.json.JSONArray
 import org.json.JSONObject
 
 class Coin : AppCompatActivity() {
+    lateinit var adView: AdView
+
     lateinit var recyclerView: RecyclerView
     lateinit var coinAdapter: CoinAdapter
     lateinit var back:ImageView
@@ -96,5 +101,15 @@ class Coin : AppCompatActivity() {
         }
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
+        adView= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
+        banner_container.addView(adView)//add pluging id 'kotlin-android-extensions'
+        adView.loadAd()
+    }
+
+    override fun onDestroy() {
+        if (adView != null){
+            adView.destroy()
+        }
+        super.onDestroy()
     }
 }
