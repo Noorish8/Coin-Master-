@@ -109,6 +109,12 @@ class Coinmaster1 : AppCompatActivity() {
         adView= AdView(this,"IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID", AdSize.BANNER_HEIGHT_50)
         banner_container.addView(adView)//add pluging id 'kotlin-android-extensions'
         adView.loadAd()
+
+        fun onBackPressed() {
+            val intent=Intent(this,CoinMaster::class.java)
+            startActivity(intent)
+            //super.onBackPressed()
+        }
     }
 
     override fun onDestroy() {
@@ -118,8 +124,6 @@ class Coinmaster1 : AppCompatActivity() {
         super.onDestroy()
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
+
 
     }

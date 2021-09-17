@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
 
-            }, 300L)
+            }, 500L)
 
 
         }

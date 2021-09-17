@@ -8,6 +8,7 @@ import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -59,6 +60,7 @@ class HomeActivity : AppCompatActivity() {
 
         list = ArrayList<DataModal>()
         val stringRequest: StringRequest = object : StringRequest(Method.POST, url,
+
             Response.Listener { response ->
                 Log.e("respons>>>>>>", response + "")
 
@@ -70,8 +72,7 @@ class HomeActivity : AppCompatActivity() {
                     val jsonobject1: JSONObject = jsonArray.getJSONObject(i)
                     val game: String = jsonobject1.getString("game")
 
-                    val img: String =
-                        "https://gamland.ga/Game_Land_with_saumin/" + jsonobject1.getString("img")
+                    val img: String = "https://gamland.ga/Game_Land_with_saumin/" + jsonobject1.getString("img")
                     val dataModal = DataModal()
                     dataModal.status = status
                     dataModal.message = message
@@ -218,11 +219,11 @@ class HomeActivity : AppCompatActivity() {
 
              fun onBackPressed() {
 
-//        val builder = AlertDialog.Builder(this)
-//        builder.setMessage("You want to exit")
-//        builder.setPositiveButton("yes", { dialogInterface: DialogInterface, i: Int ->
-//            finish()
-//        })
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("You want to exit")
+        builder.setPositiveButton("yes", { dialogInterface: DialogInterface, i: Int ->
+            finish()
+        })
 //        builder.setNegativeButton("No", { dialogInterface: DialogInterface, i: Int ->
 //            builder.show()
 //        }).show()
@@ -303,6 +304,8 @@ class HomeActivity : AppCompatActivity() {
                 .withAdListener(interstitialAdListener)
                 .build()
         )
-
+        fun onBackPressed() {
+            val intent=Intent(this,MainActivity::class.java)
+            startActivity(intent)
     }
-        }
+}}

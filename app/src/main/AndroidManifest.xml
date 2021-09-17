@@ -20,27 +20,35 @@
         <activity
             android:name=".nativebannerads"
             android:exported="true" />
-        <activity
-            android:name=".facebooknacads"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivitynative"
-            android:exported="true" />
+
         <activity
             android:name=".Spincoin1"
-            android:exported="true" />
-        <activity android:name=".Coinmaster1" />
-        <activity android:name=".Coin" />
-        <activity android:name=".Collectyourcard" />
-        <activity android:name=".Concentrateoncoinsaccordingly" />
-        <activity android:name=".Finishallevents" />
-        <activity android:name=".Learnslotmachine" />
-        <activity android:name=".playitdaily" />
-        <activity android:name=".Guide" />
-        <activity android:name=".Collect" />
-        <activity android:name=".Setting" />
-        <activity android:name=".CoinMaster" />
-        <activity android:name=".HomeActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Coinmaster1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Coin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Collectyourcard"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Concentrateoncoinsaccordingly"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Finishallevents"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Learnslotmachine"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".playitdaily"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Guide"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Collect"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Setting"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CoinMaster"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HomeActivity"
+            />
         <activity android:name=".MainActivity" android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
