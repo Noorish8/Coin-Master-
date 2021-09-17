@@ -48,6 +48,7 @@
         <activity android:name=".CoinMaster"
             android:screenOrientation="portrait"/>
         <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             />
         <activity android:name=".MainActivity" android:exported="true" >
             <intent-filter>
